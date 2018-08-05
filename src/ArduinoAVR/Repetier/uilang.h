@@ -98,7 +98,7 @@
 #define LANGUAGE_FI_ID 11
 
 #define NUM_LANGUAGES_KNOWN 12
-#define NUM_TRANSLATED_WORDS 311
+#define NUM_TRANSLATED_WORDS 312
 
 // For selectable translations we refer to each text by a id which gets
 // defined here. The list starts at 0 and defines the position in the
@@ -418,6 +418,7 @@
 #define UI_TEXT_MAINPAGE6_4_C_ID 308 //""Mul: %om%%% Laser %op W"
 #define UI_TEXT_MAINPAGE6_4_L_ID 309 //""Mul: %om%%% Spindle %opRPM"
 #define UI_TEXT_JAMCONTROL_ID 310 // "%ej Jam Control
+#define UI_TEXT_SD_FIRMWARE_UPGRADE_ID 311 //SD Firmware Upgrade
 // Universal definitions
 
 #define UI_TEXT_SEL              cSEL
@@ -4459,6 +4460,20 @@
 #define UI_TEXT_MAINPAGE6_4_L_FI "Mul: %om%%%    Las:%op W"
 #define UI_TEXT_MAINPAGE6_4_C_FI "Mul: %om%%%    Spi:%opRPM "
 #define UI_TEXT_JAMCONTROL_FI "%ej Jam Control"
+
+//Added by Me... for SD Firmware Upgrade
+#define UI_TEXT_SD_FIRMWARE_UPGRADE_EN "SD Firmware Upgrade"
+#define UI_TEXT_SD_FIRMWARE_UPGRADE_DE "SD Firmware Upgrade"
+#define UI_TEXT_SD_FIRMWARE_UPGRADE_NL "SD Firmware Upgrade"
+#define UI_TEXT_SD_FIRMWARE_UPGRADE_ES "SD Firmware Upgrade"
+#define UI_TEXT_SD_FIRMWARE_UPGRADE_PT "SD Firmware Upgrade"
+#define UI_TEXT_SD_FIRMWARE_UPGRADE_FR "SD Firmware Upgrade"
+#define UI_TEXT_SD_FIRMWARE_UPGRADE_IT "SD Firmware Upgrade"
+#define UI_TEXT_SD_FIRMWARE_UPGRADE_SE "SD Firmware Upgrade"
+#define UI_TEXT_SD_FIRMWARE_UPGRADE_CZ "SD Firmware Upgrade"
+#define UI_TEXT_SD_FIRMWARE_UPGRADE_PL "SD Firmware Upgrade"
+#define UI_TEXT_SD_FIRMWARE_UPGRADE_TR "SD Firmware Upgrade"
+#define UI_TEXT_SD_FIRMWARE_UPGRADE_FI "SD Firmware Upgrade"
 
 #define TRANS(x) UI_STRING(F ## x,x)
 #ifdef CUSTOM_TRANSLATIONS

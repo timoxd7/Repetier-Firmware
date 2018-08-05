@@ -1985,5 +1985,17 @@ If you have leveling with bed coating or fixed z min you can use this menu to ad
 */
 //#define CUSTOM_EVENTS
 
+/* 
+  You can flash new firmware updates over SD by using an different Bootloader:
+  https://github.com/FleetProbe/MicroBridge-Arduino-ATMega2560
+
+  SD Support has to be enabled!
+
+  To start a Firmware-update over SD on the Screen of your Printer, define as followed:
+  1 = Add Menue Entry under settings
+  0 = Deactivate/stock bootloader installed
+*/
+#define FEATURE_SD_FIRMWARE_UPGRADE 1
+
 #endif
 

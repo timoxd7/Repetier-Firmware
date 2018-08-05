@@ -1094,6 +1094,10 @@ UI_MENU(ui_menu_askstop, UI_MENU_ASKSTOP, 3)
 #if SDSUPPORT
 
 
+UI_MENU_ACTIONCOMMAND_T(ui_menu_sd_firmware_upgrade, UI_TEXT_SD_FIRMWARE_UPGRADE_ID, UI_ACTION_SD_FIRMWARE_UPGRADE)
+#define MENU_SD_FIRMWARE_UPGRADE_COUNT 1
+#define MENU_SD_FIRMWARE_UPGRADE_ENTRY ,&ui_menu_sd_firmware_upgrade
+
 #define UI_MENU_SD_FILESELECTOR {&ui_menu_back}
 UI_MENU_FILESELECT(ui_menu_sd_fileselector, UI_MENU_SD_FILESELECTOR, 1)
 UI_MENU_ACTIONCOMMAND_FILTER_T(ui_menu_sd_printfile, UI_TEXT_PRINT_FILE_ID,     UI_ACTION_SD_PRINT,    MENU_MODE_SD_MOUNTED,  MENU_MODE_SD_PRINTING)
@@ -1114,8 +1118,8 @@ UI_MENU_ACTIONCOMMAND_FILTER_T(ui_menu_sd_mount, UI_TEXT_MOUNT_CARD_ID, UI_ACTIO
 #define UI_MOUNT_CMD ,&ui_menu_sd_unmount,&ui_menu_sd_mount
 #endif
 UI_MENU_ACTIONCOMMAND_FILTER_T(ui_menu_sd_delete, UI_TEXT_DELETE_FILE_ID, UI_ACTION_SD_DELETE, MENU_MODE_SD_MOUNTED, MENU_MODE_SD_PRINTING)
-#define UI_MENU_SD {UI_MENU_ADDCONDBACK &ui_menu_sd_printfile,&ui_menu_sd_pause,&ui_menu_sd_continue,&ui_menu_sd_stop UI_MOUNT_CMD ,&ui_menu_sd_delete}
-UI_MENU(ui_menu_sd, UI_MENU_SD, UI_MENU_BACKCNT + 5 + UI_MOUNT_CNT)
+#define UI_MENU_SD {UI_MENU_ADDCONDBACK &ui_menu_sd_printfile,&ui_menu_sd_pause,&ui_menu_sd_continue,&ui_menu_sd_stop UI_MOUNT_CMD ,&ui_menu_sd_delete MENU_SD_FIRMWARE_UPGRADE_ENTRY}
+UI_MENU(ui_menu_sd, UI_MENU_SD, UI_MENU_BACKCNT + 5 + UI_MOUNT_CNT + MENU_SD_FIRMWARE_UPGRADE_COUNT)
 UI_MENU_SUBMENU_T(ui_menu_sd_sub, UI_TEXT_SD_CARD_ID, ui_menu_sd)
 
 #define UI_MENU_SD_COND &ui_menu_sd_sub,

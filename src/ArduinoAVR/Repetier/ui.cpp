@@ -3553,6 +3553,12 @@ int UIDisplay::executeAction(unsigned int action, bool allowMoves) {
         case UI_ACTION_MENU_SDCARD:
             pushMenu(&ui_menu_sd, false);
             break;
+#if FEATURE_SD_FIRMWARE_UPGRADE != 0
+        case UI_ACTION_SD_FIRMWARE_UPGRADE:
+            HAL::eprSetByte(EPR_SD_FLASH_BYTE, 0xF0);
+            HAL::resetHardware();
+            break;
+#endif
 #endif
         case UI_ACTION_STOP:
             pushMenu(&ui_menu_askstop, true);
